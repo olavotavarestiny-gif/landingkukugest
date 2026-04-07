@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --workspace-primary: #0a2540;
+  --workspace-primary-hover: #143a63;
+  --workspace-primary-soft: #eef4fb;
+  --workspace-primary-border: #c9d8ea;
+  --workspace-on-primary: #ffffff;
+}
+
+.workspace-servicos {
+  --workspace-primary: #0a2540;
+  --workspace-primary-hover: #143a63;
+  --workspace-primary-soft: #eef4fb;
+  --workspace-primary-border: #c9d8ea;
+  --workspace-on-primary: #ffffff;
+}
+
+.workspace-comercio {
+  --workspace-primary: #f06a1a;
+  --workspace-primary-hover: #c44f0f;
+  --workspace-primary-soft: #fdf2ea;
+  --workspace-primary-border: #fac775;
+  --workspace-on-primary: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #0a2540;
+  font-family: 'Montserrat', 'Avenir Next', 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.focus\:not-sr-only:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
