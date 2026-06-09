@@ -9,7 +9,7 @@ export type PricingSource =
   | 'final-cta';
 
 export type PricingTier = {
-  key: 'starter' | 'growth' | 'pro';
+  key: 'starter' | 'growth' | 'pro' | 'expansion';
   name: string;
   price: string;
   description: string;
@@ -20,15 +20,15 @@ export type PricingTier = {
   emphasize?: boolean;
 };
 
-const WHATSAPP_NUMBER = '244942277576';
+const REGISTER_URL = 'https://app.kukugest.ao/register';
 
 const PRICING_CATALOG: Record<WorkspaceMode, PricingTier[]> = {
   servicos: [
     {
       key: 'starter',
       name: 'Inicial',
-      price: '9.999 Kz',
-      description: 'Para quem está a começar a organizar o negócio',
+      price: '14.999 Kz',
+      description: 'Para começar a organizar contactos, tarefas e primeiros processos de venda.',
       features: [
         '1 utilizador',
         'Até 500 contactos',
@@ -38,13 +38,13 @@ const PRICING_CATALOG: Record<WorkspaceMode, PricingTier[]> = {
         'Faturação completa',
         'Painel básico',
       ],
-      buttonText: 'Escolher plano no WhatsApp',
+      buttonText: 'Criar conta',
     },
     {
       key: 'growth',
       name: 'Crescimento',
-      price: '29.999 Kz',
-      description: 'Para empresas em crescimento que precisam de mais controlo',
+      price: '34.999 Kz',
+      description: 'Para pequenas equipas que precisam de mais controlo sobre clientes, vendas e rotina.',
       features: [
         'Até 5 utilizadores',
         'Até 5.000 contactos',
@@ -54,25 +54,25 @@ const PRICING_CATALOG: Record<WorkspaceMode, PricingTier[]> = {
         'Relatórios básicos',
         'Automações básicas',
       ],
-      buttonText: 'Escolher plano no WhatsApp',
+      buttonText: 'Criar conta',
       badge: 'Mais escolhido',
       highlight: true,
     },
     {
       key: 'pro',
       name: 'Estabilidade',
-      price: '54.999 Kz',
-      description: 'Para empresas estruturadas que querem crescer com mais inteligência',
+      price: '64.999 Kz',
+      description: 'Para empresas em crescimento que precisam de processos, automações, formulários e relatórios.',
       features: [
-        'Utilizadores ilimitados',
+        'Até 15 utilizadores',
         'Contactos ilimitados',
         'Tudo do Crescimento',
         'Relatórios avançados',
         'Automações completas',
         'Permissões avançadas',
-        'Mensagens em massa (Em breve)',
+        'Mensagens em massa',
       ],
-      buttonText: 'Escolher plano no WhatsApp',
+      buttonText: 'Criar conta',
       emphasize: true,
     },
   ],
@@ -81,50 +81,58 @@ const PRICING_CATALOG: Record<WorkspaceMode, PricingTier[]> = {
       key: 'starter',
       name: 'Inicial',
       price: '9.999 Kz',
-      description: 'Para pequenas lojas que precisam de vender com simplicidade',
+      description: 'Para pequenas lojas venderem com simplicidade.',
       features: [
         '1 utilizador',
-        'Até 300 clientes',
-        'Vendas rápidas',
-        'Produtos',
         'Clientes',
-        'Faturação completa',
+        'Produtos e stock',
+        'Tarefas',
+        'Caixa',
       ],
-      buttonText: 'Escolher plano no WhatsApp',
+      buttonText: 'Criar conta',
     },
     {
       key: 'growth',
       name: 'Crescimento',
-      price: '29.999 Kz',
-      description: 'Para lojas em crescimento com mais movimento',
+      price: '22.999 Kz',
+      description: 'Para lojas em crescimento com mais movimento.',
       features: [
         'Até 5 utilizadores',
-        'Até 3.000 clientes',
         'Tudo do Inicial',
-        'Caixa',
-        'Stock',
-        'Relatórios básicos',
+        'Faturação',
+        'Venda rápida',
+        'Finanças',
       ],
-      buttonText: 'Escolher plano no WhatsApp',
+      buttonText: 'Criar conta',
       badge: 'Mais escolhido',
       highlight: true,
     },
     {
       key: 'pro',
       name: 'Estabilidade',
-      price: '54.999 Kz',
-      description: 'Para operações estruturadas com controlo total',
+      price: '44.999 Kz',
+      description: 'Para operações estruturadas com escala.',
       features: [
-        'Utilizadores ilimitados',
-        'Clientes ilimitados',
+        'Até 15 utilizadores',
         'Tudo do Crescimento',
         'Multi-estabelecimento',
-        'Gestão de equipa',
         'Relatórios avançados',
-        'Mensagens em massa (Em breve)',
       ],
-      buttonText: 'Escolher plano no WhatsApp',
+      buttonText: 'Criar conta',
       emphasize: true,
+    },
+    {
+      key: 'expansion',
+      name: 'Expansão',
+      price: 'Sob cotação',
+      description: 'Para grandes operações com necessidades à medida.',
+      features: [
+        'Utilizadores ilimitados',
+        'Tudo da Estabilidade',
+        'Limites personalizados',
+        'Suporte dedicado',
+      ],
+      buttonText: 'Falar connosco',
     },
   ],
 };
@@ -148,11 +156,10 @@ export function buildWhatsAppPlanLink({
   source?: PricingSource;
   note?: string;
 }) {
-  const planText = planLabel ? ` Quero saber mais sobre o plano ${planLabel}.` : '';
-  const workspaceText = workspaceMode ? ` Workspace: ${getWorkspaceLabel(workspaceMode)}.` : '';
-  const sourceText = source ? ` Origem: ${source}.` : '';
-  const noteText = note ? ` ${note}` : '';
-  const message = `Olá, quero conhecer o KukuGest.${planText}${workspaceText}${sourceText}${noteText}`.trim();
+  void planLabel;
+  void workspaceMode;
+  void source;
+  void note;
 
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+  return REGISTER_URL;
 }

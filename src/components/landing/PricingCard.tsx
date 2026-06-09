@@ -74,7 +74,9 @@ export default function PricingCard({
 
       <div className="mt-8 flex items-end gap-2">
         <span className="text-4xl font-black tracking-tight text-[#0A2540]">{price}</span>
-        <span className="pb-1 text-sm font-medium text-[#6b7e9a]">/mês</span>
+        {/^[\d.,]/.test(price) ? (
+          <span className="pb-1 text-sm font-medium text-[#6b7e9a]">/mês</span>
+        ) : null}
       </div>
 
       <div className="mt-8 flex-1">

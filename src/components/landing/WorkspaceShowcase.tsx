@@ -24,39 +24,41 @@ const WORKSPACE_CONTENT: Record<
 > = {
   servicos: {
     tabLabel: 'Serviços',
-    eyebrow: 'Área de trabalho para serviços',
-    title: 'Perfeito para negócios que vendem com acompanhamento, relação e organização comercial.',
+    eyebrow: 'Modo Serviços',
+    title: 'Para empresas de serviços.',
     description:
-      'Esta área foi desenhada para equipas que precisam gerir clientes, acompanhar processos de venda, distribuir tarefas e faturar sem perder visibilidade.',
+      'Agências, consultoras, escritórios, prestadores de serviço e fornecedores B2B. Ideal para captar leads, acompanhar propostas, fechar contratos e manter a equipa focada no próximo passo.',
     benefits: [
-      'Acompanhe clientes e negociações num pipeline claro.',
-      'Organize tarefas, follow-up e prioridades da equipa.',
-      'Emita faturação completa sem sair do fluxo comercial.',
-      'Tenha relatórios para perceber produtividade e receita.',
-      'Centralize o trabalho diário num painel simples e acionável.',
+      'Dashboard com funil, receita e tarefas',
+      'Processos de venda com etapas personalizáveis',
+      'Contactos, empresas e oportunidades B2B',
+      'Tarefas de acompanhamento comercial',
+      'Relatórios de conversão e desempenho',
+      'Receita recorrente e clientes ativos',
     ],
     imageSrc: '/landing/painel-servicos.png',
-    imageAlt: 'Área de trabalho de serviços do KukuGest com painel comercial, receita mensal e organização diária.',
-    cta: 'Falar sobre Serviços',
+    imageAlt: 'Painel KukuGest modo serviços com CRM, funil de vendas e operação comercial.',
+    cta: 'Criar conta',
     accent: 'bg-[#0A2540] text-white',
     panelTint: 'from-[#0A2540] via-[#1A6FD4] to-[#5EB0F5]',
   },
   comercio: {
     tabLabel: 'Comércio',
-    eyebrow: 'Área de trabalho para comércio',
-    title: 'Pensado para operações com caixa, venda rápida, stock e movimento constante ao longo do dia.',
+    eyebrow: 'Modo Comércio',
+    title: 'Para comércio e operação diária.',
     description:
-      'Esta área ajuda lojas e equipas comerciais a responder com rapidez, controlar produtos, acompanhar o caixa e manter a operação organizada num só painel.',
+      'Lojas, distribuidores e negócios com vendas frequentes. Ideal para controlar vendas, produtos, caixa, stock e desempenho diário.',
     benefits: [
-      'Veja o estado do caixa e da operação logo na primeira vista.',
-      'Acelere vendas com fluxo de venda rápida.',
-      'Acompanhe produtos, stock e alertas operacionais.',
-      'Controle clientes, equipa e faturação no mesmo ambiente.',
-      'Ganhe ritmo diário sem perder controlo da gestão.',
+      'Dashboard com vendas do dia',
+      'Vendas rápidas com carrinho',
+      'Gestão de stock e produtos',
+      'Sessão de caixa por estabelecimento',
+      'Top produtos e desempenho comercial',
+      'Relatórios de vendas e operação',
     ],
     imageSrc: '/landing/painel-comercio.png',
-    imageAlt: 'Área de trabalho de comércio do KukuGest com resumo diário, caixa, stock e ações rápidas.',
-    cta: 'Falar sobre Comércio',
+    imageAlt: 'Painel KukuGest modo comércio com vendas diárias, caixa e gestão de stock.',
+    cta: 'Criar conta',
     accent: 'bg-[#F06A1A] text-white',
     panelTint: 'from-[#F06A1A] via-[#FF9D4D] to-[#FFD0A2]',
   },
@@ -75,15 +77,17 @@ export default function WorkspaceShowcase({
   const href = activeWorkspace === 'servicos' ? serviceHref : commerceHref;
 
   return (
-    <section className="bg-white py-16 md:py-24">
+    <section id="workspaces" className="bg-white py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#6b7e9a]">Áreas de trabalho</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#6b7e9a]">
+            Dois modos de trabalho
+          </p>
           <h2 className="mt-4 text-balance text-3xl font-black tracking-[-0.04em] text-[#0A2540] md:text-5xl">
-            Escolha a área que melhor representa a forma como o seu negócio funciona.
+            O KukuGest adapta-se ao teu negócio.
           </h2>
           <p className="mt-4 text-base leading-7 text-[#5f728e] md:text-lg">
-            O KukuGest adapta a operação consoante o tipo de negócio, com duas áreas de trabalho pensadas para rotinas diferentes.
+            Escolhe o modo que melhor representa a tua operação. O sistema organiza a experiência para serviços, comércio ou equipas que precisam de controlar clientes, vendas e rotina.
           </p>
         </div>
 
@@ -115,7 +119,7 @@ export default function WorkspaceShowcase({
             <div className={`inline-flex rounded-full bg-gradient-to-r px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-white ${workspace.panelTint}`}>
               {workspace.eyebrow}
             </div>
-            <h3 className="mt-5 max-w-[14ch] text-balance text-3xl font-black tracking-[-0.04em] text-[#0A2540] md:text-5xl">
+            <h3 className="mt-5 max-w-[16ch] text-balance text-3xl font-black tracking-[-0.04em] text-[#0A2540] md:text-5xl">
               {workspace.title}
             </h3>
             <p className="mt-5 max-w-xl text-base leading-7 text-[#5f728e]">{workspace.description}</p>

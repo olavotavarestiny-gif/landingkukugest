@@ -21,7 +21,7 @@ export default function LandingVideoSection({
   const videoAvailable = hasLandingVideo();
 
   return (
-    <section className="bg-white py-14 md:py-20">
+    <section id="video" className="bg-white py-14 md:py-20">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#6b7e9a]">Vídeo de apresentação</p>
@@ -92,7 +92,7 @@ export default function LandingVideoSection({
               className="bg-[#0A2540] text-white hover:bg-[#15365a]"
             >
               <MessageCircleMore className="mr-2 h-4 w-4" />
-              Falar no WhatsApp
+              Criar conta
             </Button>
           </div>
         </div>

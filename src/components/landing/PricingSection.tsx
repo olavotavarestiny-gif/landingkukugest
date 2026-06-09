@@ -65,7 +65,11 @@ export default function PricingSection({
             </div>
           </div>
 
-          <div className="relative mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          <div
+            className={`relative mt-10 grid gap-5 md:grid-cols-2 ${
+              plans.length >= 4 ? 'xl:grid-cols-4' : 'xl:grid-cols-3'
+            }`}
+          >
             {plans.map((plan) => (
               <PricingCard
                 key={`${workspaceMode}-${plan.key}`}
@@ -91,7 +95,7 @@ export default function PricingSection({
               <p className="text-sm font-medium text-[var(--workspace-primary)]">
                 Todos os planos incluem faturação completa. Mensagens em massa chegam em breve no plano Estabilidade.
               </p>
-              <p className="mt-2 text-sm text-[#425466]">Precisa de algo personalizado? Fale connosco no WhatsApp.</p>
+              <p className="mt-2 text-sm text-[#425466]">Precisa de algo personalizado? Crie a sua conta e fale connosco.</p>
               <div className="mt-5 flex justify-center">
                 <a
                   href={buildWhatsAppPlanLink({
@@ -104,7 +108,7 @@ export default function PricingSection({
                   rel="noopener noreferrer"
                   className="inline-flex min-h-[42px] items-center justify-center rounded-full bg-[#0A2540] px-5 text-sm font-semibold text-white transition-colors hover:bg-[#15365a] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A2540] focus-visible:ring-offset-2"
                 >
-                  Falar no WhatsApp
+                  Criar conta
                 </a>
               </div>
             </div>
