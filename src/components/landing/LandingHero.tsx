@@ -20,7 +20,7 @@ export default function LandingHero({ primaryCtaHref }: { primaryCtaHref: string
       <div className="relative">
         <header className="mx-auto flex max-w-7xl items-center justify-between px-4 pb-2 pt-6 md:px-6 md:pt-8">
           <Link href="/" className="inline-flex items-center">
-            <KukuGestLogo height={38} className="drop-shadow-[0_10px_30px_rgba(8,21,36,0.35)]" />
+            <KukuGestLogo height={60} className="drop-shadow-[0_10px_30px_rgba(8,21,36,0.35)]" />
           </Link>
           <Button
             href={primaryCtaHref}

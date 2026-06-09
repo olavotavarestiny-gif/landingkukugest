@@ -39,7 +39,7 @@ export default function SiteFooter() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr]">
           <div className="max-w-[280px]">
             <Link href="/" className="inline-flex items-center">
-              <KukuGestLogo height={28} />
+              <KukuGestLogo height={48} />
             </Link>
             <p className="mt-4 text-sm leading-6 text-white/50">
               Plataforma de gestão para empresas angolanas organizarem clientes, vendas, tarefas, finanças e operação num só lugar.

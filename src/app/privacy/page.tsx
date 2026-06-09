@@ -128,7 +128,7 @@ export default function PrivacyPage() {
       <header className="border-b border-[#e5edf8] bg-white px-4 py-5 md:px-6">
         <div className="mx-auto flex max-w-4xl items-center justify-between">
           <Link href="/" className="inline-flex items-center">
-            <KukuGestLogo height={32} />
+            <KukuGestLogo height={48} />
           </Link>
           <div className="inline-flex rounded-full border border-[#dce7f4] bg-[#f7fbff] p-1">
             <button onClick={() => setLang('pt')} className={lang === 'pt' ? activeClass : inactiveClass}>
